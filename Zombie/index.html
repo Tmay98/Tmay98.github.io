@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background-color: black;
+        }
+        #endButton{
+            position: absolute;
+            top: 95vh;
+            left: 50vw;
+            color: red
+        }
+        #score{
+            text-align: center;
+            color:green;
+        }
+        #zombie1{
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img id='zombie1' src='images/zombie.png' width=128px height=128px>
+    <p id='score'><b>Score = 0</b></p>
+    <button type='button' id='endButton'>End game</button>
+
+    <script>
+        function clickZombie(){
+            document.getElementById('zombie1').src='images/explosion.gif';
+            score++;
+            displayScore(score);
+            setTimeout(moveZombie,1000);
+        }
+        function moveZombie(){
+            let width = window.innerWidth - 128;
+            let height = window.innerHeight - 128;
+            document.getElementById('zombie1').src='images/zombie.png';
+            document.getElementById('zombie1').style.left = Math.random()*width + 'px';
+            document.getElementById('zombie1').style.top = Math.random()*height + 'px';
+
+        }
+        function displayScore(score){
+            document.getElementById('score').innerHTML = '<b>Score = ' + score + '</b>'
+        }
+        function clickEndButton(){
+            score = 0;
+            displayScore(score);
+        }
+
+
+       let score = 0
+       document.getElementById('zombie1').onclick = clickZombie;
+       document.getElementById('endButton').onclick = clickEndButton;
+    </script>
+
+
+</body>
+
+
+
+
+
+
+</html>

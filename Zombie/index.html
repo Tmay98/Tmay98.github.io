@@ -39,12 +39,14 @@
             document.getElementById(zombieid).src='images/explosion.gif';
             score++;
             displayScore(score);
+
             if (zombieid == 'zombie1'){
                 clearInterval(zombieMoveInterval1);
                 zombieMoveInterval1 = setInterval(function(){
                     moveZombie(zombieid)
                     }, 3000)
             }
+            
             if (zombieid == 'zombie2'){
                 clearInterval(zombieMoveInterval2);
                 zombieMoveInterval2 = setInterval(function(){

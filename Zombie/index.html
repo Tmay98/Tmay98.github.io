@@ -10,7 +10,7 @@
             position: absolute;
             top: 95vh;
             left: 50vw;
-            color: red
+            color: red;
         }
         #score{
             text-align: center;
@@ -19,43 +19,84 @@
         #zombie1{
             position: absolute;
         }
+        #zombie2{
+            position: absolute;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <img id='zombie1' src='images/zombie.png' width=128px height=128px>
     <p id='score'><b>Score = 0</b></p>
+    <img id='zombie1' src='images/zombie.png' width=128px height=128px>
+    <img id='zombie2' src='images/zombie.png' width=128px height=128px>
     <button type='button' id='endButton'>End game</button>
 
     <script>
-        function clickZombie(){
-            document.getElementById('zombie1').src='images/explosion.gif';
+        function clickZombie(zombieid){
+            document.getElementById(zombieid).onclick = null
+            document.getElementById(zombieid).src='images/explosion.gif';
             score++;
             displayScore(score);
-            setTimeout(moveZombie,1000);
+            if (zombieid == 'zombie1'){
+                clearInterval(zombieMoveInterval1);
+                zombieMoveInterval1 = setInterval(function(){
+                    moveZombie(zombieid)
+                    }, 3000)
+            }
+            if (zombieid == 'zombie2'){
+                clearInterval(zombieMoveInterval2);
+                zombieMoveInterval2 = setInterval(function(){
+                    moveZombie(zombieid)
+                    }, 3000)
+            }
+            setTimeout(function(){moveZombie(zombieid)},1000);
         }
-        function moveZombie(){
-            let width = window.innerWidth - 128;
-            let height = window.innerHeight - 128;
-            document.getElementById('zombie1').src='images/zombie.png';
-            document.getElementById('zombie1').style.left = Math.random()*width + 'px';
-            document.getElementById('zombie1').style.top = Math.random()*height + 'px';
+
+        function moveZombie(zombieid){
+            let game_width = window.innerWidth - 128;
+            let game_height = window.innerHeight - 128;
+            document.getElementById(zombieid).src='images/zombie.png';
+            document.getElementById(zombieid).style.left = Math.random()*game_width + 'px';
+            document.getElementById(zombieid).style.top = Math.random()*game_height + 'px';
+            document.getElementById(zombieid).onclick = function(){clickZombie(zombieid)};
 
         }
+
         function displayScore(score){
             document.getElementById('score').innerHTML = '<b>Score = ' + score + '</b>'
         }
+        
         function clickEndButton(){
             score = 0;
+            clearInterval(zombieMoveInterval1);
+            clearInterval(zombieMoveInterval2);
+            zombieMoveInterval1 = setInterval(function(){
+                moveZombie('zombie1')
+                }, 3000);
+            zombieMoveInterval2 = setInterval(function(){
+                moveZombie('zombie2')
+                }, 3000);
+            moveZombie('zombie1');
+            moveZombie('zombie2');
             displayScore(score);
         }
 
 
-       let score = 0
-       document.getElementById('zombie1').onclick = clickZombie;
-       document.getElementById('endButton').onclick = clickEndButton;
+        let score = 0;
+        let zombieMoveInterval1 = setInterval(function(){
+            moveZombie('zombie1')
+            }, 3000);
+        let zombieMoveInterval2 = setInterval(function(){
+            moveZombie('zombie2')
+            }, 3000);
+        let abc55 = 50
+        moveZombie('zombie1');
+        moveZombie('zombie2');
+        document.getElementById('zombie1').onclick = function(){clickZombie('zombie1')};
+        document.getElementById('zombie2').onclick = function(){clickZombie('zombie2')};
+        document.getElementById('endButton').onclick = clickEndButton;
     </script>
 
 

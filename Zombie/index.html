@@ -32,10 +32,13 @@
     <img id='zombie1' src='images/zombie.png' width=128px height=128px>
     <img id='zombie2' src='images/zombie.png' width=128px height=128px>
     <button type='button' id='endButton'>End game</button>
-
+    <audio id="explosion" src="src/explosion.m4a" preload="auto"></audio>
     <script>
         function clickZombie(zombieid){
-            document.getElementById(zombieid).onclick = null
+            document.getElementById('explosion').pause()
+            document.getElementById('explosion').currentTime = 0
+            document.getElementById('explosion').play();
+            document.getElementById(zombieid).onclick = null;
             document.getElementById(zombieid).src='images/explosion.gif';
             score++;
             displayScore(score);
@@ -53,7 +56,7 @@
                     moveZombie(zombieid)
                     }, 3000)
             }
-            setTimeout(function(){moveZombie(zombieid)},1000);
+            setTimeout(function(){moveZombie(zombieid)},800);
         }
 
         function moveZombie(zombieid){
@@ -85,7 +88,7 @@
             displayScore(score);
         }
 
-
+        
         let score = 0;
         let zombieMoveInterval1 = setInterval(function(){
             moveZombie('zombie1')
@@ -93,7 +96,6 @@
         let zombieMoveInterval2 = setInterval(function(){
             moveZombie('zombie2')
             }, 3000);
-        let abc55 = 50
         moveZombie('zombie1');
         moveZombie('zombie2');
         document.getElementById('zombie1').onclick = function(){clickZombie('zombie1')};

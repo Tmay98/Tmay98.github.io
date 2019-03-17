@@ -54,6 +54,7 @@
         
         function clickEndButton(){
             score = 0;
+
             clearInterval(zombieMoveInterval1);
             clearInterval(zombieMoveInterval2);
             zombieMoveInterval1 = setInterval(function(){
@@ -62,8 +63,12 @@
             zombieMoveInterval2 = setInterval(function(){
                 moveZombie('zombie2')
                 }, 3000);
-            moveZombie('zombie1');
-            moveZombie('zombie2');
+
+            document.getElementById('zombie1').style.left = originalx1 + 'px';
+		    document.getElementById('zombie1').style.top = originaly1 + 'px';
+		    document.getElementById('zombie2').style.left = originalx2 + 'px';
+		    document.getElementById('zombie2').style.top = originaly2 + 'px';
+
             displayScore(score);
         }
 
@@ -75,8 +80,14 @@
         let zombieMoveInterval2 = setInterval(function(){
             moveZombie('zombie2')
             }, 3000);
+
         moveZombie('zombie1');
         moveZombie('zombie2');
+		let originalx1 = document.getElementById('zombie1').offsetLeft
+		let originaly1 = document.getElementById('zombie1').offsetTop
+		let originalx2 = document.getElementById('zombie2').offsetLeft
+		let originaly2 = document.getElementById('zombie2').offsetTop
+        
         document.getElementById('zombie1').onclick = function(){clickZombie('zombie1')};
         document.getElementById('zombie2').onclick = function(){clickZombie('zombie2')};
         document.getElementById('endButton').onclick = clickEndButton;

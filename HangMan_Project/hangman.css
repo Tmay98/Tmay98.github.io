@@ -1,0 +1,7 @@
+/*Hang Man Image CSS*/
+#hangManImage {
+    position: absolute;
+    margin: auto;
+    left: 50%;
+}
+

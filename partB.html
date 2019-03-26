@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div.ex1 {
+            width:600px;
+            margin: auto;
+            border: 3px solid #73AD21;
+            }
+
+        div.ex2 {
+            max-width:600px;
+            margin: auto;
+            border: 3px solid #73AD21;
+            }
+        div.fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            border: 3px solid #73AD21;
+            }
+        #overflowexample {
+            background-color: #eee;
+            width: 200px;
+            height: 60px;
+            border: 1px dotted black;
+            overflow: auto;
+        }
+        img {
+            float: right;
+        }
+
+        .img2 {
+            float: right;
+        }
+        .div1 {
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            border: 3px solid #73AD21;
+        }
+        div {
+            border: 3px solid #4CAF50;
+            padding: 5px;
+        }
+
+        .img1 {
+            float: right;
+        }
+
+        .div2 {
+        border: 1px solid red;
+        }
+
+        .div3 {
+        float: left;
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+        border: 3px solid #73AD21;
+        }
+
+        .div4 {
+        border: 1px solid red;
+        clear: left;
+        }
+
+        .clearfix {
+        overflow: auto;
+        }
+        .center {
+        text-align: center;
+        border: 3px solid green;
+        width: 60%;
+        position: absolute;
+        right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <p style= "width: 400px"><img src="images/pineapple.jpg" alt = "picture"
+    style="width:170px;height:170px;margin-left:15px;">
+    this is an example of an image floating to the right of a paragraph
+    </p>
+    <br><br><br><br>
+    <h2>Without clear</h2>
+<div class="div1">div1</div>
+<div class="div2">div2 - this is without clear: left the border goes over the floating div</div>
+<br><br>
+
+<h2>With clear: left</h2>
+<div class="div3">div3</div>
+<div class="div4">div4 - Here, clear: left moves div4 down below the floating div3</div>
+<br><br><br>
+
+<p>In this example, the image is taller than the element containing it, and it is floated, so it overflows outside of its container:</p>
+
+<div>
+  <img class="img1" src="images/pineapple.jpg" alt="Pineapple" width="170" height="170">
+  The box surrounds the text and overlaps on the picture
+</div>
+
+<p style="clear:right">Add a class with overflow: auto; to the containing element, to fix this problem:</p>
+
+<div class="clearfix">
+  <img class="img2" src="images/pineapple.jpg" alt="Pineapple" width="170" height="170">
+  the box surrounds both the text and picture without overlap
+</div>
+<br>
+<div id= overflowexample>
+    You can use the overflow property when you want to have better control of the layout.
+    The overflow property specifies what happens if content overflows an element's box.
+</div>
+<div class="fixed">
+        This div element has position: fixed;
+</div>
+<br><br>
+<div class="ex1">This div element has width: 600px;</div>
+<br>
+
+<div class="ex2">This div element has max-width: 600px;</div>
+<br><br>
+<h2>Center Text</h2>
+
+<div class="center">
+  <p>This text is centered in a right aligned box.</p>
+</div>
+<br><br><br><br><br><br>
+</body>
+</html>

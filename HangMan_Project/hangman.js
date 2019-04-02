@@ -1,45 +1,45 @@
-function createButtons(){
-letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    for (let i=0; i < 26; i++ ){
+function createButtons(word){
+    for (let i=0; i < 26; i++) {
         var letter = String.fromCharCode(i+65);
-        let btn = document.createElement("BUTTON");
-        btn.innerHTML = letter;
-        btn.onclick = function(){console.log('button '+letters[i]+' was pressed')};
-        document.body.appendChild(btn)
+        btns[i] = document.createElement("BUTTON");
+        btns[i].innerHTML = letter;
+        btns[i].onclick = function() {buttonclicked(btns[i], word)};
+        document.body.appendChild(btns[i]);
     }
 }
-// Dictionary List
-let list_of_words = ['coordinator', 'charizard'];
 
-// Create the image of the hang man
-let hangMan = document.createElement('img');
-hangMan.src="images/hangman.gif";
-hangMan.style.position = 'absolute';
-hangMan.style.left = '50%';
-hangMan.style.top = '50%';
-hangMan.style.margin = 'auto';
+function buttonclicked(button){
+    button.disabled = true;
+}
 
-document.body.appendChild(hangMan);
+function word(name, definition){
+    this.name = name;
+    this.definition = definition;
+}
 
+function chooseWord(list_of_words){ 
+    return list_of_words[Math.floor(Math.random()*list_of_words.length)].name
+}
 
-
-
-
-
-
+function displayLetters(){
+    
+}
 
 
+    // Dictionary List
+    let list_of_words = [new word('coordinator', 'def'), new word('charizard', 'def')];
+    // Create the image of the hang man
+    let hangMan = document.createElement('img');
+    hangMan.src="images/hangman.gif";
+    hangMan.style.position = 'absolute';
+    hangMan.style.left = '50%';
+    hangMan.style.top = '50%';
+    hangMan.style.margin = 'auto';
+    document.body.appendChild(hangMan);
 
 
-
-
-
-
-
-
-
-
-
-
-// Execute functions
-createButtons();
+    // Execute functions
+    var btns = []
+    var WordChosen = chooseWord(list_of_words)
+    console.log(WordChosen)
+    createButtons();

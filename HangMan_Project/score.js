@@ -1,15 +1,15 @@
 let score = 10;
 
-function reset() {
+function score_reset() {
     score = 0;
 }
-function increase() {
+function score_increase() {
     score++;
 }
-function decrease() {
+function score_decrease() {
     score--;
 }
-function get() {
+function score_get() {
     var dbRef = firebase.database().ref().child("score");
 	dbRef.on (
 		"value",
@@ -18,7 +18,7 @@ function get() {
             return snap.val();
         });
 }
-function set(name) {
+function score_set(name) {
     let dbref = firebase.database().ref("score/" + name).update({
         'score': score
     });

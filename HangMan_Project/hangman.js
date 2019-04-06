@@ -36,29 +36,28 @@ function buttonclicked(button, word, letter){
     displayScore()
     displayLives()
 }
-
+// Lets the player know they have lost when their lives run out
 function gameLost(){
     displayHangMan();
     setTimeout(alert('You Lose'), 2000);
-
     restart()
 }
-
+// Lets the player know they have won and with what score
 function gameWon(){
     let name = prompt('You win, Enter your name');
     alert(name+', your score is '+score);
     // send score to database leaderboard JOSH
 }
-
+// Create object class of word with its definition and name as attributes
 function word(name, definition){
     this.name = name;
     this.definition = definition;
 }
-
+// Randomly chooses a word from the array of words
 function chooseWord(list_of_words){ 
     return list_of_words[Math.floor(Math.random()*list_of_words.length)].name;
 }
-
+// Displays the word to guess in a hidden format
 function displayLetters(WordChosen){
     var letters = [];
     var underlines = [];
@@ -77,12 +76,12 @@ function displayLetters(WordChosen){
         letters[i].appendChild(underlines[i]);
     }
 }
-
+// Removes elements from body (Helper function of the restart() function)
 function removeElement(elementId) {
     var myNode = document.getElementById(elementId);
     myNode.innerHTML = '';
 }
-
+// Restarts the game
 function restart(){
     lives = 7;
     score = 0;
@@ -97,21 +96,21 @@ function restart(){
     displayScore();
     displayLives();
 }
-
+// Creates the current score for the player
 function displayScore(){
     document.getElementById('score').innerHTML = 'score: '+ score;
 }
-
+// Creates the number of lives on the body of the page
 function displayLives(){
     document.getElementById('lives').innerHTML = 'Lives: '+ lives;
 }
 
 
     // Dictionary List
-    let list_of_words = [new word('coordinator', 'def'), new word('alligator', 'def'), new word('committee', 'def'),
-        new word('hippo', 'def'), new word('overlord', 'def'), new word('overwatch', 'def'),
-        new word('apple', 'def'), new word('macintosh', 'def'), new word('fuji', 'def'),
-        new word('capitalism', 'def')];
+    let list_of_words = [new word('coordinator', 'A person whose job is to organize events or activities.'), new word('alligator', 'A large semi-aquatic reptile.'), new word('committee', 'A group of people appointed for a specific function.'),
+        new word('hippo', 'A large african mammal that lives in the water but can travel on land.'), new word('overlord', 'A person of great power or authority'), new word('overwatch', 'To watch through or throughout'),
+        new word('apple', 'A red fruit'), new word('macintosh', 'A computer model'), new word('origami', 'Paper folding art'),
+        new word('capitalism', 'A economic and political system')];
 
     // Create the image of the hang man when lives runs out.
 function displayHangMan(){
@@ -124,25 +123,23 @@ function displayHangMan(){
     hangMan.id = 'hangMan';
     document.body.appendChild(hangMan);
 }
+// Removes the hangman image from the body of the html page
 function hideHangMan(){
     let hangMan = document.getElementById('hangMan');
     document.body.removeChild(hangMan)
 }
 
-    // create restart button
+    // Create restart button
 function createRestartButton() {
     let restartButton = document.createElement("BUTTON");
     restartButton.innerHTML = 'Restart';
     restartButton.setAttribute('id', 'restartButton');
-    restartButton.onclick = function () {restart()
-    };
-    restartButton.onclick = function () {
-        hideHangMan()
-    };
-    document.getElementById('restart').appendChild(restartButton);
+    document.body.appendChild(restartButton);
+    document.getElementById('restartButton').addEventListener('click', function(){restart(); hideHangMan()})
 }
 
-    // Execute functions
+    // Execute functions+
+
     var lives = 7;
     var score = 0;
     var correctGuesses = 0;

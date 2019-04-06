@@ -84,7 +84,6 @@ function removeElement(elementId) {
 }
 
 function restart(){
-
     lives = 7;
     score = 0;
     correctGuesses = 0;
@@ -93,12 +92,10 @@ function restart(){
     removeElement('wordChosen');
     removeElement('buttons');
     WordChosen = chooseWord(list_of_words);
-
     displayLetters(WordChosen);
     createButtons(WordChosen);
     displayScore();
     displayLives();
-    
 }
 
 function displayScore(){
@@ -128,16 +125,22 @@ function displayHangMan(){
     document.body.appendChild(hangMan);
 }
 function hideHangMan(){
-    document.getElementById('hangMan').style.visibility = 'hidden';
+    let hangMan = document.getElementById('hangMan');
+    document.body.removeChild(hangMan)
 }
 
     // create restart button
-    restartButton = document.createElement("BUTTON");
+function createRestartButton() {
+    let restartButton = document.createElement("BUTTON");
     restartButton.innerHTML = 'Restart';
-    restartButton.setAttribute('id','restartButton');
-    restartButton.onclick = function() {restart()};
-    restartButton.onclick = function() {hideHangMan()};
+    restartButton.setAttribute('id', 'restartButton');
+    restartButton.onclick = function () {restart()
+    };
+    restartButton.onclick = function () {
+        hideHangMan()
+    };
     document.getElementById('restart').appendChild(restartButton);
+}
 
     // Execute functions
     var lives = 7;
@@ -149,3 +152,4 @@ function hideHangMan(){
     createButtons(WordChosen);
     displayScore();
     displayLives();
+    createRestartButton();

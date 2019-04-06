@@ -98,7 +98,7 @@ function restart(){
 }
 // Creates the current score for the player
 function displayScore(){
-    document.getElementById('score').innerHTML = 'score: '+ score;
+    document.getElementById('score').innerHTML = 'Score: '+ score;
 }
 // Creates the number of lives on the body of the page
 function displayLives(){
@@ -116,10 +116,6 @@ function displayLives(){
 function displayHangMan(){
     let hangMan = document.createElement('img');
     hangMan.src="images/hangman.gif";
-    hangMan.style.position = 'absolute';
-    hangMan.style.left = '50%';
-    hangMan.style.top = '50%';
-    hangMan.style.margin = 'auto';
     hangMan.id = 'hangMan';
     document.body.appendChild(hangMan);
 }

@@ -1,8 +1,11 @@
 /*Hang Man Image CSS*/
-#hangManImage {
+#hangMan {
+    width: 150px;
+    height: 150px;
     position: absolute;
-    margin: auto;
-    left: 50%;
+    left:50%;
+    top:15%;
+    margin:auto;
 }
 
 #wordChosen {
@@ -21,22 +24,8 @@
 
 #score {
     position: absolute;
-    border: 2px solid black;
     top: 10%;
     left: 20%;
-}
-
-#buttons {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    width: 30%;
-}
-
-
-#restartButton {
-    width: 12em;
-    height: 6em;
     padding: 15px 25px;
     font-size: 14px;
     text-align: center;
@@ -46,9 +35,38 @@
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+}
+
+#buttons {
     position: absolute;
-    top: 60%;
+    top: 50%;
+    left: 20%;
+    width: 30%;
+    padding: 5px 0px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+}
+
+
+#restartButton {
+    width: 10em;
+    height: 4em;
+    padding: 5px 10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15em;
+    position: absolute;
+    top: 70%;
     left: 20%;
 }
 #restartButton:hover {background-color: #3e8e41}
@@ -63,5 +81,14 @@
     position: absolute;
     top: 20%;
     left: 20%;
-    border: 2px solid black;
+    border: none;
+    padding: 15px 25px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 15px;
+
 }

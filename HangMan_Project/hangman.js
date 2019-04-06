@@ -111,7 +111,10 @@ function displayLives(){
 
 
     // Dictionary List
-    let list_of_words = [new word('coordinator', 'def'), new word('charizard', 'def')];
+    let list_of_words = [new word('coordinator', 'def'), new word('alligator', 'def'), new word('committee', 'def'),
+        new word('hippo', 'def'), new word('overlord', 'def'), new word('overwatch', 'def'),
+        new word('apple', 'def'), new word('macintosh', 'def'), new word('fuji', 'def'),
+        new word('capitalism', 'def')];
 
     // Create the image of the hang man when lives runs out.
 function displayHangMan(){

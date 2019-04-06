@@ -38,7 +38,9 @@ function buttonclicked(button, word, letter){
 }
 
 function gameLost(){
-    alert('You Lose');
+    displayHangMan();
+    setTimeout(alert('You Lose'), 2000);
+
     restart()
 }
 
@@ -87,14 +89,15 @@ function restart(){
     score = 0;
     correctGuesses = 0;
     var WordChosen = chooseWord(list_of_words);
-    removeElement('underlines')
-    removeElement('wordChosen')
-    removeElement('buttons')
+    removeElement('underlines');
+    removeElement('wordChosen');
+    removeElement('buttons');
     WordChosen = chooseWord(list_of_words);
+
     displayLetters(WordChosen);
     createButtons(WordChosen);
-    displayScore()
-    displayLives()
+    displayScore();
+    displayLives();
     
 }
 
@@ -110,20 +113,27 @@ function displayLives(){
     // Dictionary List
     let list_of_words = [new word('coordinator', 'def'), new word('charizard', 'def')];
 
-    // Create the image of the hang man
+    // Create the image of the hang man when lives runs out.
+function displayHangMan(){
     let hangMan = document.createElement('img');
     hangMan.src="images/hangman.gif";
     hangMan.style.position = 'absolute';
     hangMan.style.left = '50%';
     hangMan.style.top = '50%';
     hangMan.style.margin = 'auto';
+    hangMan.id = 'hangMan';
     document.body.appendChild(hangMan);
+}
+function hideHangMan(){
+    document.getElementById('hangMan').style.visibility = 'hidden';
+}
 
     // create restart button
     restartButton = document.createElement("BUTTON");
     restartButton.innerHTML = 'Restart';
-    restartButton.setAttribute('id','restartButton')
+    restartButton.setAttribute('id','restartButton');
     restartButton.onclick = function() {restart()};
+    restartButton.onclick = function() {hideHangMan()};
     document.getElementById('restart').appendChild(restartButton);
 
     // Execute functions

@@ -47,6 +47,9 @@ function gameWon(){
     let name = prompt('You win, Enter your name');
     alert(name+', your score is '+score);
     // send score to database leaderboard JOSH
+
+    // restart the game
+    restart()
 }
 // Create object class of word with its definition and name as attributes
 function word(name, definition){

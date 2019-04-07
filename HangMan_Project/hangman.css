@@ -8,6 +8,12 @@
     margin:auto;
 }
 
+#definition {
+    position: absolute;
+    top: 45%;
+    left: 20%;
+}
+
 #wordChosen {
     position: absolute;
     border: 2px solid black;
@@ -39,7 +45,7 @@
 
 #buttons {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 20%;
     padding: 5px 5px;
     font-size: 14px;
@@ -67,7 +73,7 @@
     border: none;
     border-radius: 15em;
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 20%;
 }
 #restartButton:hover {background-color: #3e8e41}

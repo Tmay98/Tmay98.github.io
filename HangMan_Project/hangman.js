@@ -55,7 +55,7 @@ function word(name, definition){
 }
 // Randomly chooses a word from the array of words
 function chooseWord(list_of_words){ 
-    return list_of_words[Math.floor(Math.random()*list_of_words.length)].name;
+    return list_of_words[Math.floor(Math.random()*list_of_words.length)];
 }
 // Displays the word to guess in a hidden format
 function displayLetters(WordChosen){
@@ -91,41 +91,38 @@ function restart(){
     removeElement('wordChosen');
     removeElement('buttons');
     WordChosen = chooseWord(list_of_words);
-    displayLetters(WordChosen);
-    createButtons(WordChosen);
+    displayLetters(WordChosen['name']);
+    createButtons(WordChosen['name']);
     displayScore();
     displayLives();
+    displayDefinition(WordChosen['definition'])
 }
+
 // Creates the current score for the player
 function displayScore(){
     document.getElementById('score').innerHTML = 'Score: '+ score;
 }
+
 // Creates the number of lives on the body of the page
 function displayLives(){
     document.getElementById('lives').innerHTML = 'Lives: '+ lives;
 }
 
-
-    // Dictionary List
-    let list_of_words = [new word('coordinator', 'A person whose job is to organize events or activities.'), new word('alligator', 'A large semi-aquatic reptile.'), new word('committee', 'A group of people appointed for a specific function.'),
-        new word('hippo', 'A large african mammal that lives in the water but can travel on land.'), new word('overlord', 'A person of great power or authority'), new word('overwatch', 'To watch through or throughout'),
-        new word('apple', 'A red fruit'), new word('macintosh', 'A computer model'), new word('origami', 'Paper folding art'),
-        new word('capitalism', 'A economic and political system')];
-
-    // Create the image of the hang man when lives runs out.
+ // Create the image of the hang man when lives runs out.
 function displayHangMan(){
     let hangMan = document.createElement('img');
     hangMan.src="images/hangman.gif";
     hangMan.id = 'hangMan';
     document.body.appendChild(hangMan);
 }
+
 // Removes the hangman image from the body of the html page
 function hideHangMan(){
     let hangMan = document.getElementById('hangMan');
     document.body.removeChild(hangMan)
 }
 
-    // Create restart button
+// Create restart button
 function createRestartButton() {
     let restartButton = document.createElement("BUTTON");
     restartButton.innerHTML = 'Restart';
@@ -134,15 +131,27 @@ function createRestartButton() {
     document.getElementById('restartButton').addEventListener('click', function(){restart(); hideHangMan()})
 }
 
-    // Execute functions+
+function displayDefinition(definition){
+    document.getElementById('definition').innerHTML = definition
+}
 
-    var lives = 7;
-    var score = 0;
-    var correctGuesses = 0;
-    var btns = [];
-    var WordChosen = chooseWord(list_of_words);
-    displayLetters(WordChosen);
-    createButtons(WordChosen);
-    displayScore();
-    displayLives();
-    createRestartButton();
+ // Dictionary List
+ let list_of_words = [new word('coordinator', 'A person whose job is to organize events or activities.'), new word('alligator', 'A large semi-aquatic reptile.'), new word('committee', 'A group of people appointed for a specific function.'),
+ new word('hippo', 'A large african mammal that lives in the water but can travel on land.'), new word('overlord', 'A person of great power or authority'), new word('overwatch', 'To watch through or throughout'),
+ new word('apple', 'A red fruit'), new word('macintosh', 'A computer model'), new word('origami', 'Paper folding art'),
+ new word('capitalism', 'A economic and political system')];
+
+ // global variables
+var lives = 7;
+var score = 0;
+var correctGuesses = 0;
+var btns = [];
+var WordChosen = chooseWord(list_of_words);
+
+// Execute functions+
+displayLetters(WordChosen['name']);
+createButtons(WordChosen['name']);
+displayScore();
+displayLives();
+displayDefinition(WordChosen['definition']);
+createRestartButton();

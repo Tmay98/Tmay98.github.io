@@ -38,7 +38,6 @@ function buttonclicked(button, word, letter){
 }
 // Lets the player know they have lost when their lives run out
 function gameLost(){
-    displayHangMan();
     setTimeout(alert('You Lose'), 2000);
     restart()
 }
@@ -111,19 +110,6 @@ function displayLives(){
     document.getElementById('lives').innerHTML = 'Lives: '+ lives;
 }
 
- // Create the image of the hang man when lives runs out.
-function displayHangMan(){
-    let hangMan = document.createElement('img');
-    hangMan.src="images/hangman.gif";
-    hangMan.id = 'hangMan';
-    document.body.appendChild(hangMan);
-}
-
-// Removes the hangman image from the body of the html page
-function hideHangMan(){
-    let hangMan = document.getElementById('hangMan');
-    document.body.removeChild(hangMan)
-}
 
 // Create restart button
 function createRestartButton() {
@@ -131,7 +117,7 @@ function createRestartButton() {
     restartButton.innerHTML = 'Restart';
     restartButton.setAttribute('id', 'restartButton');
     document.body.appendChild(restartButton);
-    document.getElementById('restartButton').addEventListener('click', function(){restart(); hideHangMan()})
+    document.getElementById('restartButton').addEventListener('click', function(){restart();})
 }
 
 function displayDefinition(definition){

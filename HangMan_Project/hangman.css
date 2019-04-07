@@ -1,17 +1,18 @@
 #definition {
     position: relative;
-    top: 45%;
-    left: 20%;
+    top: 1em;
+    left: 5%;
     float: left;
     clear: both;
     overflow:auto;
+    font-size: 1.5em;
 }
 
 #wordChosen {
     position: relative;
     border: 2px solid black;
-    top: 30%;
-    left: 20%;
+    top: 1em;
+    left: 5%;
     min-width: 25%;
     clear: left;
     float: left;
@@ -21,8 +22,8 @@
 #underlines {
     position: relative;
     border: 2px solid black;
-    top: 30%;
-    left: 20%;
+    top: 1em;
+    left: 5%;
     float: right;
     clear: both;
     overflow: auto;
@@ -31,24 +32,24 @@
 
 #buttons {
     position: relative;
-    top: 55%;
-    left: 20%;
+    top: 1em;
+    left: 5%;
     padding: 5px 5px;
-    font-size: 14px;
+    font-size: 1em;
     text-align: center;
     outline: none;
     color: #fff;
     background-color: #4CAF50;
     border: none;
-    display:inline-block;
     float: left;
+    clear: both;
 
 }
 
 #lives {
     position: relative;
-    top: 20%;
-    left: 20%;
+    top: 1em;
+    left: 5%;
     width: 10em;
     height: 4em;
     border: none;
@@ -64,8 +65,8 @@
 
 #score {
     position: relative;
-    top: 10%;
-    left: 20%;
+    top: 1em;
+    left: 5%;
     width: 10em;
     height: 4em;
     padding: 5px 5px;
@@ -83,7 +84,7 @@
     width: 10em;
     height: 4em;
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 1em;
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -92,8 +93,8 @@
     border: none;
     border-radius: 15em;
     position: relative;
-    top: 65%;
-    left: 20%;
+    top: 2em;
+    left: 5%;
     clear: both;
     float: left;
 }
@@ -106,8 +107,10 @@
 }
 
 #Title{
+    position: relative;
     height: auto;
     width: auto;
-    font-size: 25px;
+    font-size: 2em;
+    left: 5%;
 
 }

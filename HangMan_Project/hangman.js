@@ -4,6 +4,7 @@ function createButtons(word){
         var letter = String.fromCharCode(i+65);
         btns[i] = document.createElement("BUTTON");
         btns[i].innerHTML = letter;
+        btns[i].style.fontSize = '1em'
         btns[i].onclick = function() {buttonclicked(btns[i], word, letters[i])};
         document.getElementById('buttons').appendChild(btns[i]);
     }
@@ -70,11 +71,13 @@ function displayLetters(WordChosen){
         letters[i].style.display = 'inline-block';
         letters[i].style.visibility = 'hidden';
         letters[i].style.margin = '20px';
+        letters[i].style.fontSize = '1em'
         document.getElementById('wordChosen').appendChild(letters[i]);
         underlines[i] = document.createElement('p');
         underlines[i].style.margin = '2px';
         underlines[i].innerHTML = '_';
         underlines[i].style.visibility = 'visible';
+        underlines[i].style.fontSize = '1em'
         letters[i].appendChild(underlines[i]);
     }
 }

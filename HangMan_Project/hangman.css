@@ -12,6 +12,9 @@
     position: absolute;
     top: 45%;
     left: 20%;
+    float: left;
+    clear: both;
+    overflow:auto;
 }
 
 #wordChosen {
@@ -19,6 +22,10 @@
     border: 2px solid black;
     top: 30%;
     left: 20%;
+    min-width: 25%;
+    clear: left;
+    float: left;
+    overflow: auto;
 }
 
 #underlines {
@@ -26,6 +33,9 @@
     border: 2px solid black;
     top: 30%;
     left: 20%;
+    float: right;
+    clear: both;
+    overflow: auto;
 }
 
 #score {
@@ -41,6 +51,7 @@
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
+    clear: both;
 }
 
 #buttons {
@@ -56,6 +67,7 @@
     background-color: #4CAF50;
     border: none;
     display:inline-block;
+    clear: both;
 
 }
 
@@ -75,6 +87,7 @@
     position: absolute;
     top: 65%;
     left: 20%;
+    clear: both;
 }
 #restartButton:hover {background-color: #3e8e41}
 

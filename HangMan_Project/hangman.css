@@ -6,10 +6,11 @@
     left:50%;
     top:15%;
     margin:auto;
+    float: right
 }
 
 #definition {
-    position: absolute;
+    position: relative;
     top: 45%;
     left: 20%;
     float: left;
@@ -18,7 +19,7 @@
 }
 
 #wordChosen {
-    position: absolute;
+    position: relative;
     border: 2px solid black;
     top: 30%;
     left: 20%;
@@ -29,7 +30,7 @@
 }
 
 #underlines {
-    position: absolute;
+    position: relative;
     border: 2px solid black;
     top: 30%;
     left: 20%;
@@ -39,9 +40,10 @@
 }
 
 #score {
-    position: absolute;
+    position: relative;
     top: 10%;
     left: 20%;
+    width: 5%;
     padding: 15px 25px;
     font-size: 14px;
     text-align: center;
@@ -55,7 +57,7 @@
 }
 
 #buttons {
-    position: absolute;
+    position: relative;
     top: 55%;
     left: 20%;
     padding: 5px 5px;
@@ -67,7 +69,7 @@
     background-color: #4CAF50;
     border: none;
     display:inline-block;
-    clear: both;
+    float: left;
 
 }
 
@@ -84,10 +86,11 @@
     background-color: #4CAF50;
     border: none;
     border-radius: 15em;
-    position: absolute;
+    position: relative;
     top: 65%;
     left: 20%;
     clear: both;
+    float: left;
 }
 #restartButton:hover {background-color: #3e8e41}
 
@@ -98,9 +101,10 @@
 }
 
 #lives {
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 20%;
+    width: 5%;
     border: none;
     padding: 15px 25px;
     font-size: 14px;

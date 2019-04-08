@@ -27,7 +27,7 @@ function buttonclicked(button, word, letter){
         score--;
         lives--;
         if(lives == 0){
-            gameLost();
+            gameLost(); 
         }
     }
     // if all letters guessed game won
@@ -95,12 +95,13 @@ function restart(){
     removeElement('underlines');
     removeElement('wordChosen');
     removeElement('buttons');
-    WordChosen = chooseWord(list_of_words);
+    WordChosen = chooseWord(list_of_words); 
     displayLetters(WordChosen['name']);
     createButtons(WordChosen['name']);
     displayScore();
     displayLives();
-    displayDefinition(WordChosen['definition'])
+    displayDefinition(WordChosen['definition']);
+
 }
 
 // Creates the current score for the player
@@ -126,6 +127,9 @@ function createRestartButton() {
 function displayDefinition(definition){
     document.getElementById('definition').innerHTML = definition
 }
+
+
+        
 
  // Dictionary List
  let list_of_words = [new word('coordinator', 'A person whose job is to organize events or activities.'), new word('alligator', 'A large semi-aquatic reptile.'), new word('committee', 'A group of people appointed for a specific function.'),

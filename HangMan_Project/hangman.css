@@ -1,3 +1,9 @@
+
+body {background-image: url(images/anotherhangman.gif);
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+}
 #definition {
     position: relative;
     top: 1em;

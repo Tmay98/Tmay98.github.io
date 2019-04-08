@@ -33,6 +33,8 @@ function buttonclicked(button, word, letter){
     // if all letters guessed game won
     if(correctGuesses == word.length){
         gameWon();
+        Amir();
+        
     }
     displayScore()
     displayLives()
@@ -128,8 +130,31 @@ function displayDefinition(definition){
     document.getElementById('definition').innerHTML = definition
 }
 
+//Create Amir when he win game
+function Amir(){
+    let text= document.createElement("img");
+    text.setAttribute("src","images/text.gif");
+    text.setAttribute("width", "225");
+    text.setAttribute("height", "282");
+    document.getElementById("Amir").appendChild(text);
+    let new_line=document.createElement("br");
+    document.getElementById("Amir").appendChild(new_line)
 
-        
+    let Amir= document.createElement("img");
+    Amir.setAttribute("src","images/Amir.jpg");
+    Amir.setAttribute("width", "225");
+    Amir.setAttribute("height", "282");
+    document.getElementById("Amir").appendChild(Amir);
+    let new_line_1=document.createElement("br");
+    document.getElementById("Amir").appendChild(new_line_1)
+
+    let dancer= document.createElement("img");
+    dancer.setAttribute("src","images/dancer.gif");
+    dancer.setAttribute("width", "225");
+    dancer.setAttribute("height", "282");
+    document.getElementById("Amir").appendChild(dancer);
+
+}        
 
  // Dictionary List
  let list_of_words = [new word('coordinator', 'A person whose job is to organize events or activities.'), new word('alligator', 'A large semi-aquatic reptile.'), new word('committee', 'A group of people appointed for a specific function.'),

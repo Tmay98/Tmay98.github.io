@@ -27,12 +27,13 @@ function buttonclicked(button, word, letter){
         score--;
         lives--;
         if(lives == 0){
-            gameLost();
+            gameLost(); 
         }
     }
     // if all letters guessed game won
     if(correctGuesses == word.length){
         gameWon();
+        //Amir();
     }
     displayScore()
     displayLives()
@@ -47,7 +48,8 @@ function gameWon(){
     let name = prompt('You win, Enter your name');
     alert(name+', your score is '+score);
     // send score to database leaderboard JOSH
-
+    scoreSetDatabase(name, score);
+    
     // restart the game
     restart()
 }
@@ -95,12 +97,13 @@ function restart(){
     removeElement('underlines');
     removeElement('wordChosen');
     removeElement('buttons');
-    WordChosen = chooseWord(list_of_words);
+    WordChosen = chooseWord(list_of_words); 
     displayLetters(WordChosen['name']);
     createButtons(WordChosen['name']);
     displayScore();
     displayLives();
-    displayDefinition(WordChosen['definition'])
+    displayDefinition(WordChosen['definition']);
+
 }
 
 // Creates the current score for the player
@@ -127,6 +130,32 @@ function displayDefinition(definition){
     document.getElementById('definition').innerHTML = definition
 }
 
+//Create Amir when he win game
+function Amir(){
+    let text= document.createElement("img");
+    text.setAttribute("src","images/text.gif");
+    text.setAttribute("width", "225");
+    text.setAttribute("height", "282");
+    document.getElementById("Amir").appendChild(text);
+    let new_line=document.createElement("br");
+    document.getElementById("Amir").appendChild(new_line)
+
+    let Amir= document.createElement("img");
+    Amir.setAttribute("src","images/Amir.jpg");
+    Amir.setAttribute("width", "225");
+    Amir.setAttribute("height", "282");
+    document.getElementById("Amir").appendChild(Amir);
+    let new_line_1=document.createElement("br");
+    document.getElementById("Amir").appendChild(new_line_1)
+
+    let dancer= document.createElement("img");
+    dancer.setAttribute("src","images/dancer.gif");
+    dancer.setAttribute("width", "225");
+    dancer.setAttribute("height", "282");
+    document.getElementById("Amir").appendChild(dancer);
+
+}        
+
  // Dictionary List
  let list_of_words = [new word('coordinator', 'A person whose job is to organize events or activities.'), new word('alligator', 'A large semi-aquatic reptile.'), new word('committee', 'A group of people appointed for a specific function.'),
  new word('hippo', 'A large african mammal that lives in the water but can travel on land.'), new word('overlord', 'A person of great power or authority'), new word('overwatch', 'To watch through or throughout'),
@@ -147,3 +176,4 @@ displayScore();
 displayLives();
 displayDefinition(WordChosen['definition']);
 createRestartButton();
+updateScoreboard();

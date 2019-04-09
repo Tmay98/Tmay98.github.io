@@ -1,3 +1,11 @@
+
+body {
+    /* background-image: url(images/anotherhangman.gif); */
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+}
 #definition {
     position: relative;
     top: 1em;
@@ -27,6 +35,20 @@
     float: right;
     clear: both;
     overflow: auto;
+}
+
+#scoreboard {
+    position: relative;
+    border: 2px solid black;
+    top: 1em;
+    left: 5%;
+    clear: left;
+    float: left;
+    overflow: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
 }
 
 
@@ -114,3 +136,7 @@
     left: 5%;
 
 }
+#Amir{
+    position:absolute;
+    top:350px;
+    left :200px;}

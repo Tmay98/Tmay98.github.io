@@ -45,7 +45,7 @@ function gameLost(){
 }
 // Lets the player know they have won and with what score
 function gameWon(){
-    let name = prompt('You win, Enter your name');
+    let name = prompt('You win, Enter your name', 'anonymous');
     alert(name+', your score is '+score);
     // send score to database leaderboard JOSH
     scoreSetDatabase(name, score);

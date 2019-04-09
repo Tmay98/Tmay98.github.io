@@ -1,5 +1,7 @@
 
-body {background-image: url(images/anotherhangman.gif);
+body {
+    /* background-image: url(images/anotherhangman.gif); */
+    background-color: whitesmoke;
     background-repeat: no-repeat;
     background-position: right;
     position: relative;
@@ -33,6 +35,20 @@ body {background-image: url(images/anotherhangman.gif);
     float: right;
     clear: both;
     overflow: auto;
+}
+
+#scoreboard {
+    position: relative;
+    border: 2px solid black;
+    top: 1em;
+    left: 5%;
+    clear: left;
+    float: left;
+    overflow: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
 }
 
 

@@ -33,8 +33,7 @@ function buttonclicked(button, word, letter){
     // if all letters guessed game won
     if(correctGuesses == word.length){
         gameWon();
-        Amir();
-        
+        //Amir();
     }
     displayScore()
     displayLives()
@@ -49,7 +48,8 @@ function gameWon(){
     let name = prompt('You win, Enter your name');
     alert(name+', your score is '+score);
     // send score to database leaderboard JOSH
-
+    scoreSetDatabase(name, score);
+    
     // restart the game
     restart()
 }
@@ -176,3 +176,4 @@ displayScore();
 displayLives();
 displayDefinition(WordChosen['definition']);
 createRestartButton();
+updateScoreboard();

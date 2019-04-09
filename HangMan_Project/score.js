@@ -32,10 +32,20 @@ function scoreSetDatabase(name, score) {
 }
 function printScoreboard(scoreData) {
     clearScorebard();
-
-    // let highScore = 0;
+    let scoreArray = []
     for (var key in scoreData) {
-        scoreboardDiv.innerHTML += String(key) + ": " + String(scoreData[key]["score"]) + " PT</br>";
+        scoreArray.push([key, scoreData[key]['score']])
+    }
+
+    // sorting array by 2nd value which is score
+    scoreArray = scoreArray.sort(function(a,b) {
+        return a[1] - b[1];
+    });
+    // reverse so highest score is first
+    scoreArray.reverse()
+    // let highScore = 0;
+    for (var i in scoreArray) {
+        scoreboardDiv.innerHTML += scoreArray[i][0] + ": " + scoreArray[i][1] + " PT</br>";
     }
 }
 

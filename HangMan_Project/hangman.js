@@ -94,7 +94,6 @@ function restart(){
     score = 0;
     correctGuesses = 0;
     var WordChosen = chooseWord(list_of_words);
-    removeElement('underlines');
     removeElement('wordChosen');
     removeElement('buttons');
     WordChosen = chooseWord(list_of_words); 

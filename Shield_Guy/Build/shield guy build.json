@@ -1,0 +1,16 @@
+{
+"companyName": "Shield Knight",
+"productName": "Shield Knight",
+"productVersion": "0.1",
+"dataUrl": "shield guy build.data.unityweb",
+"wasmCodeUrl": "shield guy build.wasm.code.unityweb",
+"wasmFrameworkUrl": "shield guy build.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.1.4f1"
+}
